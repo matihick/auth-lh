@@ -43,12 +43,13 @@ module Auth
       protected
 
       def create_login_attempt
-        result = post_request '/login_attempts', {
-          app_code: @application_code,
-          return_url: @return_url
-        }
+        params = { app_code: @application_code }
 
-        LoginAttempt.new(result)
+        if @return_url
+          params[:return_url] = @return_url
+        end
+
+        LoginAttempt.new(post_request('/login_attempts', params))
       end
 
       def get_request(action, params={})

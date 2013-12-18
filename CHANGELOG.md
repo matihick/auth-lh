@@ -21,3 +21,7 @@
 ## v0.0.6
 
 * Bugfix: api method url mistyped
+
+## v0.0.7
+
+* Make return url optional
