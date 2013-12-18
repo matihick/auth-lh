@@ -6,7 +6,7 @@ module Auth
       def initialize(attributes={})
         attributes.each do |k,v|
           if k.to_s == 'user'
-            self.user = Auth::User.new(v) if v.present?
+            self.user = User.new(v) if v.present?
           else
             self.send("#{k}=", v)
           end
