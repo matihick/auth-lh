@@ -3,12 +3,13 @@ module Auth
     class Api
       include Singleton
 
-      attr_accessor :endpoint, :return_url, :application_code
+      attr_accessor :endpoint, :return_url, :application_code, :access_token
 
       def self.configure(args={})
         instance.endpoint = (args[:endpoint] || 'https://auth.lhconfort.com.ar')
         instance.return_url = args[:return_url]
         instance.application_code = args[:application_code]
+        instance.access_token = args[:access_token]
       end
 
       def logged_user(session_token, remote_ip)

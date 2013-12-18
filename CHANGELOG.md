@@ -13,3 +13,7 @@
 ## v0.0.4
 
 * Implemented method to get users from api
+
+## v0.0.5
+
+* Bugfix: access token not being set in configuration
