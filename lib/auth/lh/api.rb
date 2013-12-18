@@ -30,6 +30,15 @@ module Auth
         "#{@endpoint}/logout?return=#{CGI::escape(@return_url)}"
       end
 
+      def get_user(code_or_login)
+        User.new(get_request("/api/user/#{code_or_login}"))
+      end
+
+      def get_users(filters={})
+        results = get_request("/api/users", filters)
+        results.map { |r| User.new(r) }
+      end
+
       protected
 
       def create_login_attempt
@@ -42,11 +51,16 @@ module Auth
       end
 
       def get_request(action, params={})
-        JSON.parse(RestClient.get("#{@endpoint}#{action}", {params: params}))
+        response = RestClient.get("#{@endpoint}#{action}", {params: params}.merge(auth_headers))
+        JSON.parse(response.body)
       end
 
       def post_request(action, params={})
-        JSON.parse(RestClient.post("#{@endpoint}#{action}", params))
+        JSON.parse(RestClient.post("#{@endpoint}#{action}", params, auth_headers))
+      end
+
+      def auth_headers
+        { authorization: "Token token=\"#{@access_token}\"" }
       end
     end
   end

@@ -1,8 +1,8 @@
 module Auth
   module Lh
     class User
-      attr_accessor :code, :email, :jabber, :name, :login,
-        :shop_code, :allowed_application_codes
+      attr_accessor :code, :email, :jabber, :name, :login, :shop_code,
+        :is_admin, :allow_remote_access, :last_activity
 
       def initialize(attributes={})
         attributes.each do |k,v|
