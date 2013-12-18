@@ -23,11 +23,11 @@ module Auth
 
       def login_url
         login_attempt = create_login_attempt
-        "#{@endpoint_url}/login?attempt=#{login_attempt.token}"
+        "#{@endpoint}/login?attempt=#{login_attempt.token}"
       end
 
       def logout_url
-        "#{@endpoint_url}/logout?return=#{CGI::escape(@return_url)}"
+        "#{@endpoint}/logout?return=#{CGI::escape(@return_url)}"
       end
 
       protected
@@ -42,11 +42,11 @@ module Auth
       end
 
       def get_request(action, params={})
-        JSON.parse(RestClient.get("#{@endpoint_url}#{action}", {params: params}))
+        JSON.parse(RestClient.get("#{@endpoint}#{action}", {params: params}))
       end
 
       def post_request(action, params={})
-        JSON.parse(RestClient.post("#{@endpoint_url}#{action}", params))
+        JSON.parse(RestClient.post("#{@endpoint}#{action}", params))
       end
     end
   end
