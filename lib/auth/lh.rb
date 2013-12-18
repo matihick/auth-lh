@@ -1,7 +1,10 @@
-require "auth/lh/version"
+require 'auth/lh/api'
+require 'auth/lh/login_attempt'
+require 'auth/lh/session_response'
+require 'auth/lh/user'
 
-module Auth
-  module Lh
-    # Your code goes here...
-  end
-end
+require 'auth/lh/version'
+
+# dependencies
+require 'rest-client'
+require 'singleton'

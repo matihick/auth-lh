@@ -3,21 +3,22 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'auth/lh/version'
 
-Gem::Specification.new do |spec|
-  spec.name          = "auth-lh"
-  spec.version       = Auth::Lh::VERSION
-  spec.authors       = ["unformatt"]
-  spec.email         = ["unformatt@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
-  spec.license       = "MIT"
+Gem::Specification.new do |s|
+  s.name          = "auth-lh"
+  s.version       = Auth::Lh::VERSION
+  s.authors       = ["Matias Hick"]
+  s.email         = ["unformatt@gmail.com"]
+  s.description   = "Authentication with auth lh api"
+  s.summary       = "Authentication with auth lh api"
+  s.homepage      = "https://github.com/unformattmh/auth-lh"
+  s.license       = "MIT"
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  s.files         = Dir["LICENSE.md", "README.md", "CHANGELOG.md", "lib/**/*"]
+  s.executables   = []
+  s.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
+  s.add_development_dependency "bundler", "~> 1.3"
+  s.add_development_dependency "rake"
+
+  s.add_runtime_dependency "rest-client", "~> 1.6.7"
 end
