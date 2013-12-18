@@ -32,7 +32,7 @@ module Auth
       end
 
       def get_user(code_or_login)
-        User.new(get_request("/api/user/#{code_or_login}"))
+        User.new(get_request("/api/users/#{code_or_login}"))
       end
 
       def get_users(filters={})

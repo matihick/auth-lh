@@ -17,3 +17,7 @@
 ## v0.0.5
 
 * Bugfix: access token not being set in configuration
+
+## v0.0.6
+
+* Bugfix: api method url mistyped
