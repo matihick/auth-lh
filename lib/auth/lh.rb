@@ -1,7 +1,7 @@
-require 'auth/lh/api'
-require 'auth/lh/login_attempt'
-require 'auth/lh/session_response'
-require 'auth/lh/user'
+require 'auth_lh/api'
+require 'auth_lh/login_attempt'
+require 'auth_lh/session_response'
+require 'auth_lh/user'
 
 require 'auth/lh/version'
 

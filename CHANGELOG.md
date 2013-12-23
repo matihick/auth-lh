@@ -25,3 +25,7 @@
 ## v0.0.7
 
 * Make return url optional
+
+## v0.0.8
+
+* Changed auth interface.
