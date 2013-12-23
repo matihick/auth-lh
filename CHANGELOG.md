@@ -29,3 +29,7 @@
 ## v0.0.8
 
 * Changed auth interface.
+
+## v0.0.9
+
+* Changed auth interface again.
