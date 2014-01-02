@@ -33,3 +33,7 @@
 ## v0.0.9
 
 * Changed auth interface again.
+
+## v0.0.10
+
+* Removed login from user response.
