@@ -34,6 +34,11 @@ module AuthLh
     results.map { |r| User.new(r) }
   end
 
+  def self.get_all_users
+    results = get_request("/api/users/all")
+    results.map { |r| User.new(r) }
+  end
+
   protected
 
   def self.create_login_attempt

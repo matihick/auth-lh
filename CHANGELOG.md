@@ -37,3 +37,7 @@
 ## v0.0.10
 
 * Removed login from user response.
+
+## v0.0.11
+
+* Added fields to users, added method to get all users
