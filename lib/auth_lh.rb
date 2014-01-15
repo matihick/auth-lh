@@ -39,6 +39,15 @@ module AuthLh
     results.map { |r| User.new(r) }
   end
 
+  def self.get_external_apps
+    results = get_request("/api/external_apps")
+    results.map { |r| ExternalApp.new(r) }
+  end
+
+  def self.get_external_app(code_or_name)
+    ExternalApp.new(get_request("/api/external_apps/#{code_or_name}"))
+  end
+
   protected
 
   def self.create_login_attempt

@@ -41,3 +41,7 @@
 ## v0.0.11
 
 * Added fields to users, added method to get all users
+
+## v0.0.12
+
+* Added external apps methods
