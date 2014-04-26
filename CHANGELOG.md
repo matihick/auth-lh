@@ -45,3 +45,7 @@
 ## v0.0.12
 
 * Added external apps methods
+
+## v0.1.0
+
+* Authentication methods put into module
