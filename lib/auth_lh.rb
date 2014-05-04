@@ -6,14 +6,38 @@ module AuthLh
     @access_token = args[:access_token]
   end
 
-  def self.logged_user(session_token, remote_ip)
-    result = get_request '/logged_user', {
+  def self.get_user(code_or_login)
+    User.new(get_request("/api/users/#{code_or_login}"))
+  end
+
+  def self.get_users(filters={})
+    results = get_request('/api/users', filters)
+    results.map { |r| User.new(r) }
+  end
+
+  def self.get_users_extended
+    results = get_request('/api/users/extended')
+    results.map { |r| UserExtended.new(r) }
+  end
+
+  def self.get_current_user(session_token, remote_ip)
+    result = get_request '/api/current_user', {
       app_code: @application_code,
       session_token: session_token,
       remote_ip: remote_ip
     }
 
     SessionResponse.new(result)
+  end
+
+  def self.get_external_apps
+    results = get_request('/api/external_apps')
+    results.map { |r| ExternalApp.new(r) }
+  end
+
+  def self.get_roles
+    results = get_request('/api/roles')
+    results.map { |r| Role.new(r) }
   end
 
   def self.login_url
@@ -25,39 +49,12 @@ module AuthLh
     "#{@endpoint}/logout?return=#{CGI::escape(@return_url)}"
   end
 
-  def self.get_user(code_or_login)
-    User.new(get_request("/api/users/#{code_or_login}"))
-  end
-
-  def self.get_users(filters={})
-    results = get_request("/api/users", filters)
-    results.map { |r| User.new(r) }
-  end
-
-  def self.get_all_users
-    results = get_request("/api/users/all")
-    results.map { |r| User.new(r) }
-  end
-
-  def self.get_external_apps
-    results = get_request("/api/external_apps")
-    results.map { |r| ExternalApp.new(r) }
-  end
-
-  def self.get_external_app(code_or_name)
-    ExternalApp.new(get_request("/api/external_apps/#{code_or_name}"))
-  end
-
   protected
 
   def self.create_login_attempt
-    params = { app_code: @application_code }
-
-    if @return_url
-      params[:return_url] = @return_url
-    end
-
-    LoginAttempt.new(post_request('/login_attempts', params))
+    LoginAttempt.new(post_request('/api/login_attempts', {
+      return_url: @return_url
+    }))
   end
 
   def self.get_request(action, params={})

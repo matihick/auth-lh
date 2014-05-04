@@ -49,3 +49,7 @@
 ## v0.1.0
 
 * Authentication methods put into module
+
+## v0.1.1
+
+* API Reorganization

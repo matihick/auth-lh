@@ -1,7 +1,6 @@
 module AuthLh
-  class User
-    attr_accessor :code, :email, :jabber, :name, :login,
-      :shop_code, :enabled, :role_codes
+  class Role
+    attr_accessor :code, :name
 
     def initialize(attributes={})
       attributes.each do |k,v|
@@ -10,4 +9,3 @@ module AuthLh
     end
   end
 end
-

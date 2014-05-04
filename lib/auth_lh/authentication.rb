@@ -29,9 +29,9 @@ module AuthLh
         all_external.find { |x| x.login == login.to_s }
       end
 
-      def find_logged_user(session_token, remote_ip)
+      def find_current_user(session_token, remote_ip)
         if (session_token.present? && (@session_token != session_token))
-          response = AuthLh.logged_user(session_token, remote_ip)
+          response = AuthLh.get_current_user(session_token, remote_ip)
 
           if response.nil?
             @cached_logged_user = nil
