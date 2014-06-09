@@ -53,3 +53,7 @@
 ## v0.1.1
 
 * API Reorganization
+
+## v0.2.0
+
+* Enable users to change password

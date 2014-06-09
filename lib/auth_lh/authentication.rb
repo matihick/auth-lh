@@ -1,7 +1,7 @@
 module AuthLh
   module Authentication
     def self.included(base)
-        base.extend(ClassMethods)
+      base.extend(ClassMethods)
     end
 
     def auth_user
@@ -63,6 +63,10 @@ module AuthLh
 
       def logout_url
         AuthLh.logout_url
+      end
+
+      def change_password_url
+        AuthLh.change_password_url
       end
     end
   end

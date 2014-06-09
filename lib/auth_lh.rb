@@ -46,7 +46,11 @@ module AuthLh
   end
 
   def self.logout_url
-    "#{@endpoint}/logout?return=#{CGI::escape(@return_url)}"
+    "#{@endpoint}/logout?return_url=#{CGI::escape(@return_url)}"
+  end
+
+  def self.change_password_url
+    "#{@endpoint}/change_password?return_url=#{CGI::escape(@return_url)}"
   end
 
   protected
