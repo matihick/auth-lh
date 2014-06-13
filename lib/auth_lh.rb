@@ -40,6 +40,10 @@ module AuthLh
     results.map { |r| Role.new(r) }
   end
 
+  def self.get_role(code)
+    Role.new(get_request("/api/roles/#{code}"))
+  end
+
   def self.login_url
     login_attempt = create_login_attempt
     "#{@endpoint}/login?attempt=#{login_attempt.token}"

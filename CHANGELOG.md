@@ -57,3 +57,7 @@
 ## v0.2.0
 
 * Enable users to change password
+
+## v0.2.1
+
+* Get role by code
