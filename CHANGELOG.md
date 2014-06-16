@@ -61,3 +61,7 @@
 ## v0.2.1
 
 * Get role by code
+
+## v0.2.2
+
+* Added has_role method to user

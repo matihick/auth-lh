@@ -12,6 +12,10 @@ module AuthLh
     def password_expired?
       password_expired == true
     end
+
+    def has_role?(role_code)
+      role_codes.include?(role_code.to_s)
+    end
   end
 end
 
