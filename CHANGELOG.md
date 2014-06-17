@@ -65,3 +65,8 @@
 ## v0.2.2
 
 * Added has_role method to user
+
+
+## v0.2.3
+
+* Remove cache external users

@@ -18,11 +18,7 @@ module AuthLh
 
     module ClassMethods
       def all_external
-        unless @cache_auth_users
-          @cache_auth_users = AuthLh.get_users
-        end
-
-        @cache_auth_users
+        AuthLh.get_users
       end
 
       def find_external(login)
