@@ -69,3 +69,7 @@
 ## v0.2.3
 
 * Remove cache external users
+
+## v0.2.4
+
+* Fixed runtime dependencies
