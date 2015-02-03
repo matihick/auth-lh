@@ -57,6 +57,11 @@ module AuthLh
     "#{@endpoint}/change_password?return_url=#{CGI::escape(@return_url)}"
   end
 
+  def self.whatsmyshop(ip_address=nil)
+    attrs = { ip: ip_address }
+    get_request('/api/whatsmyshop', attrs)['shop_codes']
+  end
+
   protected
 
   def self.create_login_attempt

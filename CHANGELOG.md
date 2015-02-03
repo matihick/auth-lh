@@ -73,3 +73,7 @@
 ## v0.2.4
 
 * Fixed runtime dependencies
+
+## v0.3.0
+
+* Added whatsmyshop method
