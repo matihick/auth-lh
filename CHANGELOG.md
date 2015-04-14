@@ -77,3 +77,7 @@
 ## v0.3.0
 
 * Added whatsmyshop method
+
+## v0.3.1
+
+* Remove caching from get current user method

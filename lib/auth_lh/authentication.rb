@@ -26,23 +26,19 @@ module AuthLh
       end
 
       def find_current_user(session_token, remote_ip)
-        if (session_token.present? && (@session_token != session_token))
-          response = AuthLh.get_current_user(session_token, remote_ip)
+        response = AuthLh.get_current_user(session_token, remote_ip)
 
-          if response.nil?
-            @cached_logged_user = nil
-            @session_token = nil
-            @login_error = nil
-          else
-            @cached_logged_user = response.user
-            @session_token = session_token
-            @login_error = response.reason
-          end
+        if response.nil?
+          logged_user = nil
+          login_error = nil
+        else
+          logged_user = response.user
+          login_error = response.reason
         end
 
-        if @cached_logged_user
-          user = find_or_create_by(login: @cached_logged_user.login)
-          user.auth_user = @cached_logged_user
+        if logged_user
+          user = find_or_create_by(login: logged_user.login)
+          user.auth_user = logged_user
           user
         else
           nil
