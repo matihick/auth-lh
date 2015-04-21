@@ -81,3 +81,7 @@
 ## v0.3.1
 
 * Remove caching from get current user method
+
+## v0.3.2
+
+* Added new fields to entities
