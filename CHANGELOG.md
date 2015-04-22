@@ -89,3 +89,7 @@
 ## v0.4.0
 
 * Improved auth interface
+
+## v0.4.1
+
+* Changed field in session response

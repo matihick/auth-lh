@@ -29,7 +29,7 @@ module AuthLh
         response = AuthLh.get_current_user(session_token, remote_ip, return_url)
 
         logged_user = response.user
-        @login_url = response.login_url
+        @destination_url = response.destination_url
 
         if logged_user
           user = find_or_create_by(login: logged_user.login)
@@ -41,7 +41,11 @@ module AuthLh
       end
 
       def login_url(return_url=nil)
-        AuthLh.login_url(return_url)
+        if @destination_url.present?
+          @destination_url
+        else
+          AuthLh.login_url(return_url)
+        end
       end
 
       def logout_url(return_url=nil)
