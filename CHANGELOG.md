@@ -85,3 +85,7 @@
 ## v0.3.2
 
 * Added new fields to entities
+
+## v0.4.0
+
+* Improved auth interface

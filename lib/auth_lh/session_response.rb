@@ -1,6 +1,6 @@
 module AuthLh
   class SessionResponse
-    attr_accessor :user, :success, :reason
+    attr_accessor :user, :login_url
 
     def initialize(attributes={})
       attributes.each do |k,v|

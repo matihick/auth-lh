@@ -25,16 +25,11 @@ module AuthLh
         all_external.find { |x| x.login == login.to_s }
       end
 
-      def find_current_user(session_token, remote_ip)
-        response = AuthLh.get_current_user(session_token, remote_ip)
+      def find_current_user(session_token, remote_ip, return_url=nil)
+        response = AuthLh.get_current_user(session_token, remote_ip, return_url)
 
-        if response.nil?
-          logged_user = nil
-          login_error = nil
-        else
-          logged_user = response.user
-          login_error = response.reason
-        end
+        logged_user = response.user
+        @login_url = response.login_url
 
         if logged_user
           user = find_or_create_by(login: logged_user.login)
@@ -45,20 +40,20 @@ module AuthLh
         end
       end
 
-      def login_url
-        if @login_error
-          "#{AuthLh.login_url}&reason=#{@login_error}"
-        else
-          AuthLh.login_url
-        end
+      def login_url(return_url=nil)
+        AuthLh.login_url(return_url)
       end
 
-      def logout_url
-        AuthLh.logout_url
+      def logout_url(return_url=nil)
+        AuthLh.logout_url(return_url)
       end
 
-      def change_password_url
-        AuthLh.change_password_url
+      def change_password_url(return_url=nil)
+        AuthLh.change_password_url(return_url)
+      end
+
+      def my_apps_url
+        AuthLh.my_apps_url
       end
     end
   end

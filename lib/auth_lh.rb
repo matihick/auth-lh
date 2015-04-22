@@ -1,7 +1,6 @@
 module AuthLh
   def self.configure(args={})
-    @endpoint = (args[:endpoint] || 'https://auth.lhconfort.com.ar')
-    @return_url = args[:return_url]
+    @endpoint = (args[:endpoint] || 'https://usuarios.lhconfort.com.ar')
     @application_code = args[:application_code]
     @access_token = args[:access_token]
   end
@@ -20,16 +19,6 @@ module AuthLh
     results.map { |r| UserExtended.new(r) }
   end
 
-  def self.get_current_user(session_token, remote_ip)
-    result = get_request '/api/current_user', {
-      app_code: @application_code,
-      session_token: session_token,
-      remote_ip: remote_ip
-    }
-
-    SessionResponse.new(result)
-  end
-
   def self.get_external_apps
     results = get_request('/api/external_apps')
     results.map { |r| ExternalApp.new(r) }
@@ -44,39 +33,55 @@ module AuthLh
     Role.new(get_request("/api/roles/#{code}"))
   end
 
-  def self.login_url
-    login_attempt = create_login_attempt
-    "#{@endpoint}/login?attempt=#{login_attempt.token}"
+  def self.get_current_user(session_token, remote_ip, return_url=nil)
+    result = get_request '/api/current_user', {
+      app_code: @application_code,
+      session_token: session_token,
+      remote_ip: remote_ip,
+      return_url: return_url
+    }
+
+    SessionResponse.new(result)
   end
 
-  def self.logout_url
-    "#{@endpoint}/logout?return_url=#{CGI::escape(@return_url)}"
-  end
-
-  def self.change_password_url
-    "#{@endpoint}/change_password?return_url=#{CGI::escape(@return_url)}"
-  end
-
-  def self.whatsmyshop(ip_address=nil)
+  def self.get_current_shop(ip_address=nil)
     attrs = { ip: ip_address }
     get_request('/api/whatsmyshop', attrs)['shop_codes']
   end
 
-  protected
-
-  def self.create_login_attempt
-    LoginAttempt.new(post_request('/api/login_attempts', {
-      return_url: @return_url
-    }))
+  def self.login_url(return_url=nil)
+    if return_url.present?
+      "#{@endpoint}/login?return_url=#{CGI::escape(return_url)}"
+    else
+      "#{@endpoint}/login"
+    end
   end
+
+  def self.logout_url(return_url=nil)
+    if return_url.present?
+      "#{@endpoint}/logout?return_url=#{CGI::escape(return_url)}"
+    else
+      "#{@endpoint}/logout"
+    end
+  end
+
+  def self.change_password_url(return_url=nil)
+    if return_url.present?
+      "#{@endpoint}/change_password?return_url=#{CGI::escape(return_url)}"
+    else
+      "#{@endpoint}/change_password"
+    end
+  end
+
+  def self.my_apps_url
+    "#{@endpoint}"
+  end
+
+  protected
 
   def self.get_request(action, params={})
     response = RestClient.get("#{@endpoint}#{action}", {params: params}.merge(auth_headers))
     JSON.parse(response.body)
-  end
-
-  def self.post_request(action, params={})
-    JSON.parse(RestClient.post("#{@endpoint}#{action}", params, auth_headers))
   end
 
   def self.auth_headers
