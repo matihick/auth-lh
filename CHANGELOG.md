@@ -93,3 +93,7 @@
 ## v0.4.1
 
 * Changed field in session response
+
+## v0.4.2
+
+* Added filters to get users extended

@@ -14,8 +14,8 @@ module AuthLh
     results.map { |r| User.new(r) }
   end
 
-  def self.get_users_extended
-    results = get_request('/api/users/extended')
+  def self.get_users_extended(filters={})
+    results = get_request('/api/users/extended', filters)
     results.map { |r| UserExtended.new(r) }
   end
 
