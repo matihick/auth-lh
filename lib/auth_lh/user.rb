@@ -1,7 +1,7 @@
 module AuthLh
   class User
     attr_accessor :code, :email, :jabber, :name, :login, :shop_code,
-      :enabled, :role_codes, :password_expired, :birthdate, :dni
+      :shop_id, :enabled, :role_codes, :password_expired, :birthdate, :dni
 
     def initialize(attributes={})
       attributes.each do |k,v|

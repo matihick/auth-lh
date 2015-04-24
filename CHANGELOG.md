@@ -97,3 +97,7 @@
 ## v0.4.2
 
 * Added filters to get users extended
+
+## v0.5.0
+
+* Added shop_id to user
