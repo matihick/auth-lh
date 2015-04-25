@@ -82,7 +82,11 @@ module AuthLh
 
   def self.get_request(action, params={})
     response = RestClient.get("#{@endpoint}#{action}", {params: params}.merge(auth_headers))
-    JSON.parse(response.body)
+    if response.body == 'null'
+      nil
+    else
+      JSON.parse(response.body)
+    end
   end
 
   def self.auth_headers

@@ -105,3 +105,7 @@
 ## v0.6.0
 
 * Changed get current shop return type
+
+## v0.6.1
+
+* Bugfix on response for get current shop
