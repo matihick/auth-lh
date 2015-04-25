@@ -46,7 +46,8 @@ module AuthLh
 
   def self.get_current_shop(ip_address=nil)
     attrs = { ip: ip_address }
-    get_request('/api/whatsmyshop', attrs)['shop_codes']
+    response = get_request('/api/current_shop', attrs)
+    response.nil? ? nil : Shop.new(response)
   end
 
   def self.login_url(return_url=nil)

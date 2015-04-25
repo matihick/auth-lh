@@ -101,3 +101,7 @@
 ## v0.5.0
 
 * Added shop_id to user
+
+## v0.6.0
+
+* Changed get current shop return type
