@@ -109,3 +109,7 @@
 ## v0.6.1
 
 * Bugfix on response for get current shop
+
+## v0.7.0
+
+* Added working time field
