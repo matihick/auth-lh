@@ -113,3 +113,7 @@
 ## v0.7.0
 
 * Added working time field
+
+## v0.8.0
+
+* Added has attendance control field
