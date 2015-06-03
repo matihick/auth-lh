@@ -118,6 +118,10 @@
 
 * Added has attendance control field
 
-## v0.8.2
+## v0.8.1
 
 * Removed birthdate field
+
+## v0.8.2
+
+* Refactored external apps fields
