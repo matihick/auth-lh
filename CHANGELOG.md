@@ -118,6 +118,6 @@
 
 * Added has attendance control field
 
-## v0.8.1
+## v0.8.2
 
 * Removed birthdate field
