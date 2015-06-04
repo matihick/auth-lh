@@ -21,7 +21,7 @@ module AuthLh
 
   def self.get_external_apps
     results = get_request('/api/external_apps')
-    results.map { |r| ExternalApp.new(r) }
+    results.map { |r| ExternalAppExtended.new(r) }
   end
 
   def self.get_roles

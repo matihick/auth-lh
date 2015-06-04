@@ -125,3 +125,7 @@
 ## v0.8.2
 
 * Refactored external apps fields
+
+## v0.9.0
+
+* Added enabled apps for user.

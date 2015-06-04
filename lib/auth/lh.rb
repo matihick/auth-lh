@@ -1,6 +1,7 @@
 require 'auth_lh'
 require 'auth_lh/authentication'
 require 'auth_lh/external_app'
+require 'auth_lh/external_app_extended'
 require 'auth_lh/role'
 require 'auth_lh/session_response'
 require 'auth_lh/shop'

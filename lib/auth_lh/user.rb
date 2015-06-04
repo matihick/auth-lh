@@ -1,12 +1,16 @@
 module AuthLh
   class User
     attr_accessor :code, :email, :jabber, :name, :login, :shop_code,
-      :shop_id, :enabled, :role_codes, :password_expired, :dni,
-      :has_attendance_control
+      :shop_id, :shop_name, :enabled, :role_codes, :password_expired,
+      :dni, :has_attendance_control, :external_apps
 
     def initialize(attributes={})
       attributes.each do |k,v|
-        self.send("#{k}=", v)
+        if k.to_s == 'external_apps'
+          self.external_apps = v.map { |x| ExternalApp.new(x) }
+        else
+          self.send("#{k}=", v)
+        end
       end
     end
 
