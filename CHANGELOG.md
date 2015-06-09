@@ -133,3 +133,7 @@
 ## v0.10.0
 
 * Added seller code and method to update attributes from users.
+
+## v0.10.1
+
+* Bugfixed update user method.

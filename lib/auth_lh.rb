@@ -10,7 +10,7 @@ module AuthLh
   end
 
   def self.update_user(code_or_login, attrs={})
-    User.new(get_request("/api/users/#{code_or_login}", attrs))
+    User.new(put_request("/api/users/#{code_or_login}", attrs))
   end
 
   def self.get_users(filters={})
