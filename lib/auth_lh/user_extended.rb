@@ -4,7 +4,7 @@ module AuthLh
       :password_expired, :enabled, :shop_code, :allow_remote_access,
       :session_timeout, :access_level, :only_working_time, :birthdate,
       :allow_multiple_sessions, :working_time, :dni, :app_codes, :role_codes,
-      :has_attendance_control
+      :has_attendance_control, :seller_code
 
     def initialize(attributes={})
       attributes.each do |k,v|

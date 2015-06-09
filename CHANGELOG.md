@@ -1,30 +1,30 @@
 ## v0.0.1
 
-* Initial release
+* Initial release.
 
 ## v0.0.2
 
-* Bugfix: mistyped variable
+* Bugfix: mistyped variable.
 
 ## v0.0.3
 
-* Bugfix: namespace bad typed
+* Bugfix: namespace bad typed.
 
 ## v0.0.4
 
-* Implemented method to get users from api
+* Implemented method to get users from api.
 
 ## v0.0.5
 
-* Bugfix: access token not being set in configuration
+* Bugfix: access token not being set in configuration.
 
 ## v0.0.6
 
-* Bugfix: api method url mistyped
+* Bugfix: api method url mistyped.
 
 ## v0.0.7
 
-* Make return url optional
+* Make return url optional.
 
 ## v0.0.8
 
@@ -40,92 +40,96 @@
 
 ## v0.0.11
 
-* Added fields to users, added method to get all users
+* Added fields to users, added method to get all users.
 
 ## v0.0.12
 
-* Added external apps methods
+* Added external apps methods.
 
 ## v0.1.0
 
-* Authentication methods put into module
+* Authentication methods put into module.
 
 ## v0.1.1
 
-* API Reorganization
+* API Reorganization.
 
 ## v0.2.0
 
-* Enable users to change password
+* Enable users to change password.
 
 ## v0.2.1
 
-* Get role by code
+* Get role by code.
 
 ## v0.2.2
 
-* Added has_role method to user
+* Added has_role method to user.
 
 ## v0.2.3
 
-* Remove cache external users
+* Remove cache external users.
 
 ## v0.2.4
 
-* Fixed runtime dependencies
+* Fixed runtime dependencies.
 
 ## v0.3.0
 
-* Added whatsmyshop method
+* Added whatsmyshop method.
 
 ## v0.3.1
 
-* Remove caching from get current user method
+* Remove caching from get current user method.
 
 ## v0.3.2
 
-* Added new fields to entities
+* Added new fields to entities.
 
 ## v0.4.0
 
-* Improved auth interface
+* Improved auth interface.
 
 ## v0.4.1
 
-* Changed field in session response
+* Changed field in session response.
 
 ## v0.4.2
 
-* Added filters to get users extended
+* Added filters to get users extended.
 
 ## v0.5.0
 
-* Added shop_id to user
+* Added shop_id to user.
 
 ## v0.6.0
 
-* Changed get current shop return type
+* Changed get current shop return type.
 
 ## v0.6.1
 
-* Bugfix on response for get current shop
+* Bugfix on response for get current shop.
 
 ## v0.7.0
 
-* Added working time field
+* Added working time field.
 
 ## v0.8.0
 
-* Added has attendance control field
+* Added has attendance control field.
 
 ## v0.8.1
 
-* Removed birthdate field
+* Removed birthdate field.
 
 ## v0.8.2
 
-* Refactored external apps fields
+* Refactored external apps fields.
 
 ## v0.9.0
 
 * Added enabled apps for user.
+
+## v0.10.0
+
+* Added seller code and method to update attributes from users.

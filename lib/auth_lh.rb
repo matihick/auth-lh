@@ -9,6 +9,10 @@ module AuthLh
     User.new(get_request("/api/users/#{code_or_login}"))
   end
 
+  def self.update_user(code_or_login, attrs={})
+    User.new(get_request("/api/users/#{code_or_login}", attrs))
+  end
+
   def self.get_users(filters={})
     results = get_request('/api/users', filters)
     results.map { |r| User.new(r) }
@@ -82,6 +86,17 @@ module AuthLh
 
   def self.get_request(action, params={})
     response = RestClient.get("#{@endpoint}#{action}", {params: params}.merge(auth_headers))
+
+    if response.body == 'null'
+      nil
+    else
+      JSON.parse(response.body)
+    end
+  end
+
+  def put_request(action, params={}, headers={})
+    response = RestClient.put("#{@endpoint_url}#{action}", params, headers.merge(auth_headers))
+
     if response.body == 'null'
       nil
     else
