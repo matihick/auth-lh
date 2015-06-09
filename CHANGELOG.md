@@ -141,3 +141,7 @@
 ## v0.10.2
 
 * Bugfixed method modifier for put request.
+
+## v0.10.3
+
+* Bugfixed mistyped variable on put request method.

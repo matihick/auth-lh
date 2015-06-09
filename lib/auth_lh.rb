@@ -94,8 +94,8 @@ module AuthLh
     end
   end
 
-  def self.put_request(action, params={}, headers={})
-    response = RestClient.put("#{@endpoint_url}#{action}", params, headers.merge(auth_headers))
+  def self.put_request(action, params={})
+    response = RestClient.put("#{@endpoint}#{action}", params, auth_headers)
 
     if response.body == 'null'
       nil
