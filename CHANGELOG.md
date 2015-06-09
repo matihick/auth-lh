@@ -137,3 +137,7 @@
 ## v0.10.1
 
 * Bugfixed update user method.
+
+## v0.10.2
+
+* Bugfixed method modifier for put request.
