@@ -153,3 +153,7 @@
 ## v0.11.1
 
 * Bugfix
+
+## v0.11.2
+
+* Added attributes to user extended
