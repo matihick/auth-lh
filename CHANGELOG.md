@@ -149,3 +149,7 @@
 ## v0.11.0
 
 * Attributes refactor
+
+## v0.11.1
+
+* Bugfix
