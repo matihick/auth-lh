@@ -145,3 +145,7 @@
 ## v0.10.3
 
 * Bugfixed mistyped variable on put request method.
+
+## v0.11.0
+
+* Attributes refactor

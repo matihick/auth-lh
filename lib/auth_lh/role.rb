@@ -1,6 +1,6 @@
 module AuthLh
   class Role
-    attr_accessor :code, :name, :required_level, :position, :unique_by_shop, :required_shop_code
+    attr_accessor :code, :name, :position
 
     def initialize(attributes={})
       attributes.each do |k,v|

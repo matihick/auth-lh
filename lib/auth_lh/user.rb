@@ -1,8 +1,9 @@
 module AuthLh
   class User
-    attr_accessor :code, :email, :jabber, :name, :login, :shop_code,
-      :shop_id, :shop_name, :enabled, :role_codes, :password_expired,
-      :dni, :has_attendance_control, :external_apps, :seller_code
+    attr_accessor :email, :jabber, :name, :login, :shop_code,
+    :shop_id, :shop_name, :enabled, :role_codes, :password_expired,
+    :dni, :has_attendance_control, :has_remote_desktop,
+    :fingerprint_from, :fingerprint_to
 
     def initialize(attributes={})
       attributes.each do |k,v|
@@ -20,6 +21,18 @@ module AuthLh
 
     def has_role?(role_code)
       role_codes.include?(role_code.to_s)
+    end
+
+    def has_some_role?(r_codes)
+      r_codes.any? { |r_code|
+        role_codes.include?(r_code.to_s)
+      }
+    end
+
+    def has_all_roles?(r_codes)
+      r_codes.all? { |r_code|
+        role_codes.include?(r_code.to_s)
+      }
     end
   end
 end
