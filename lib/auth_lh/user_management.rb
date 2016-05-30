@@ -1,5 +1,5 @@
 module AuthLh
-  module Authentication
+  module UserManagement
     def self.included(base)
       base.extend(ClassMethods)
     end
@@ -14,22 +14,6 @@ module AuthLh
 
     def auth_user=(val)
       @auth_user = val
-    end
-
-    def has_role?(r_code)
-      role_codes.include?(r_code.to_s)
-    end
-
-    def has_some_role?(r_codes)
-      r_codes.any? { |r_code|
-        role_codes.include?(r_code.to_s)
-      }
-    end
-
-    def has_all_roles?(r_codes)
-      r_codes.all? { |r_code|
-        role_codes.include?(r_code.to_s)
-      }
     end
 
     module ClassMethods
