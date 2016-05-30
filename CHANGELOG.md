@@ -169,3 +169,7 @@
 ## v0.13.0
 
 * Refactor on authentication module
+
+## v0.13.1
+
+* Removed no longer used attributes
