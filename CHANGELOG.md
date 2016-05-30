@@ -157,3 +157,7 @@
 ## v0.11.2
 
 * Added attributes to user extended
+
+## v0.12.0
+
+* Added role management, improved authentication module, api moved to its own class
