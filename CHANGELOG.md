@@ -161,3 +161,7 @@
 ## v0.12.0
 
 * Added role management, improved authentication module, api moved to its own class
+
+## v0.12.1
+
+* Bugfixes

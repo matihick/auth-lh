@@ -34,7 +34,7 @@ module AuthLh
 
     module ClassMethods
       def all_external
-        @cached_users ||= AuthLh.get_users({ pagination: 'false' })
+        @cached_users ||= AuthLh::Api.get_users({ pagination: 'false' })
       end
 
       def all_external_with_role(role_code)

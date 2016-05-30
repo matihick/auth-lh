@@ -18,11 +18,7 @@ module AuthLh
 
     module ClassMethods
       def all_external
-        unless @cache_auth_roles
-          @cached_roles = AuthLh::Api.get_roles
-        end
-
-        @cached_roles
+        @cached_roles ||= AuthLh::Api.get_roles
       end
 
       def find_external(code)
