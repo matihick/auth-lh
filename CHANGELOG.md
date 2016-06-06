@@ -173,3 +173,7 @@
 ## v0.13.1
 
 * Removed no longer used attributes
+
+## v0.14.0
+
+* Added first_name and last_name to users, removed name attribute.
