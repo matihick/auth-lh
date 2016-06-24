@@ -181,3 +181,7 @@
 ## v0.14.1
 
 * Added attendance_mode attribute.
+
+## v0.14.2
+
+* Removed no longer used has_attendance_control attribute.
