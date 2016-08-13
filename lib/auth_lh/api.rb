@@ -7,11 +7,11 @@ module AuthLh
     end
 
     def self.get_user(login)
-      User.new(get_request("/api/users/#{login}"))
+      User.new(get_request("/api/users/#{CGI::escape(login)}"))
     end
 
     def self.update_user(login, attrs={})
-      User.new(put_request("/api/users/#{login}", attrs))
+      User.new(put_request("/api/users/#{CGI::escape(login)}", attrs))
     end
 
     def self.get_users(filters={})
@@ -35,7 +35,7 @@ module AuthLh
     end
 
     def self.get_role(code)
-      Role.new(get_request("/api/roles/#{code}"))
+      Role.new(get_request("/api/roles/#{CGI::escape(code)}"))
     end
 
     def self.get_current_user(session_token, remote_ip, return_url=nil)

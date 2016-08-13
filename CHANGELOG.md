@@ -185,3 +185,7 @@
 ## v0.14.2
 
 * Removed no longer used has_attendance_control attribute.
+
+## v0.15
+
+* Fixed escaping on user methods.
