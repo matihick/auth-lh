@@ -189,3 +189,7 @@
 ## v0.15
 
 * Fixed escaping on user methods.
+
+## v0.16.0
+
+* Bugfix getting current shop.
