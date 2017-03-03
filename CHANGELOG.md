@@ -209,3 +209,7 @@
 ## v0.19.0
 
 * Removed code from role.
+
+## v0.19.1
+
+* Removed assignable from role.
