@@ -197,3 +197,7 @@
 ## v0.17.0
 
 * Replaced role codes by role ids.
+
+## v0.18.0
+
+* Added id to roles.
