@@ -205,3 +205,7 @@
 ## v0.18.1
 
 * Changed param name on get role method.
+
+## v0.19.0
+
+* Removed code from role.
