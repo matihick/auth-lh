@@ -34,8 +34,8 @@ module AuthLh
       results.map { |r| Role.new(r) }
     end
 
-    def self.get_role(code)
-      Role.new(get_request("/api/roles/#{CGI::escape(code)}"))
+    def self.get_role(role_id)
+      Role.new(get_request("/api/roles/#{role_id}"))
     end
 
     def self.get_current_user(session_token, remote_ip, return_url=nil)

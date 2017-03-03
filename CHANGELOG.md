@@ -201,3 +201,7 @@
 ## v0.18.0
 
 * Added id to roles.
+
+## v0.18.1
+
+* Changed param name on get role method.
