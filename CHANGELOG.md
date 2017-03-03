@@ -193,3 +193,7 @@
 ## v0.16.0
 
 * Bugfix getting current shop.
+
+## v0.17.0
+
+* Replaced role codes by role ids.

@@ -21,13 +21,13 @@ module AuthLh
         @cached_users ||= AuthLh::Api.get_users({ pagination: 'false' })
       end
 
-      def all_external_with_role(role_code)
-        all_external.find_all { |x| x.has_role?(role_code) }
+      def all_external_with_role(role_id)
+        all_external.find_all { |x| x.has_role?(role_id) }
       end
 
-      def all_external_with_some_role(role_codes)
+      def all_external_with_some_role(role_ids)
         all_external.find_all { |x|
-          role_codes.any? { |role_code| x.has_role?(role_code) }
+          role_ids.any? { |role_id| x.has_role?(role_id) }
         }
       end
 

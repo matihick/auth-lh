@@ -6,7 +6,7 @@ module AuthLh
 
     def auth_role
       if @auth_role.nil?
-        @auth_role = self.class.find_external(code)
+        @auth_role = self.class.find_external(id)
       end
 
       @auth_role
@@ -21,8 +21,8 @@ module AuthLh
         @cached_roles ||= AuthLh::Api.get_roles
       end
 
-      def find_external(code)
-        all_external.find { |x| x.code == code.to_s }
+      def find_external(id)
+        all_external.find { |x| x.id == id.to_i }
       end
 
       def clear_cache!

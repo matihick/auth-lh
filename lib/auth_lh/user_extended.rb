@@ -5,7 +5,7 @@ module AuthLh
       :allow_remote_access, :session_timeout, :only_working_time,
       :allow_multiple_sessions, :working_time, :has_remote_desktop,
       :fingerprint_from, :fingerprint_to, :attendance_mode,
-      :role_codes, :app_codes
+      :role_ids, :app_codes
 
     def initialize(attributes={})
       attributes.each do |k,v|
