@@ -1,14 +1,16 @@
 module AuthLh
   class User
     attr_accessor :email, :jabber, :first_name, :last_name, :login,
-    :shop_code, :shop_id, :shop_name, :enabled, :role_ids,
-    :password_expired, :has_remote_desktop, :attendance_mode,
-    :fingerprint_from, :fingerprint_to, :external_apps
+    :shop_code, :shop_id, :shop_name, :enabled, :password_expired,
+    :has_remote_desktop, :attendance_mode, :fingerprint_from,
+    :fingerprint_to, :attendance_mode, :external_apps, :roles
 
     def initialize(attributes={})
       attributes.each do |k,v|
         if k.to_s == 'external_apps'
           self.external_apps = v.map { |x| ExternalApp.new(x) }
+        elsif k.to_s == 'roles'
+          self.roles = v.map { |x| Role.new(x) }
         else
           self.send("#{k}=", v)
         end
@@ -17,6 +19,10 @@ module AuthLh
 
     def name
       "#{first_name} #{last_name}"
+    end
+
+    def role_ids
+      roles.map(&:id)
     end
 
     def has_role?(role_id)

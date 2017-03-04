@@ -213,3 +213,11 @@
 ## v0.19.1
 
 * Removed assignable from role.
+
+## v0.20.0
+
+* Refactor on attributes for user and user extended.
+
+## v0.20.1
+
+* Refactor on attributes for users and roles.

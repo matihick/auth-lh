@@ -1,5 +1,5 @@
 module Auth
   module Lh
-    VERSION = "0.19.1"
+    VERSION = "0.21.0"
   end
 end

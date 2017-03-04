@@ -1,7 +1,6 @@
 module AuthLh
   class ExternalAppExtended
-    attr_accessor :code, :name, :description, :url, :send_notifications,
-      :is_local, :notifications_url
+    attr_accessor :code, :name, :description, :url, :is_local
 
     def initialize(attributes={})
       attributes.each do |k,v|
