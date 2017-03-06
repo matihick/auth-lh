@@ -3,8 +3,8 @@ module AuthLh
     attr_accessor :email, :jabber, :login, :password_digest, :password_expired,
       :enabled, :shop_code, :shop_id, :allow_remote_access, :session_timeout, :only_working_time,
       :allow_multiple_sessions, :working_time, :has_remote_desktop, :fingerprint_from,
-      :fingerprint_to, :pending_password_refresh, :first_name, :last_name, :attendance_mode,
-      :testing_user, :disable_time, :password_remember_enabled, :external_apps, :roles
+      :fingerprint_to, :first_name, :last_name, :attendance_mode, :testing_user, :disable_time,
+      :password_remember_enabled, :external_apps, :roles
 
     def initialize(attributes={})
       attributes.each do |k,v|

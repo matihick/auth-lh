@@ -218,6 +218,10 @@
 
 * Refactor on attributes for user and user extended.
 
-## v0.20.1
+## v0.21
 
 * Refactor on attributes for users and roles.
+
+## v0.21.1
+
+* Removed no longer used attribute from users.
