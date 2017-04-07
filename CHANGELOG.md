@@ -245,3 +245,7 @@
 ## v0.26.0
 
 * Changed local name to local description on external app
+
+## v0.27.0
+
+* Bugfix on dependencies
