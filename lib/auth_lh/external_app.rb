@@ -7,6 +7,10 @@ module AuthLh
         self.send("#{k}=", v)
       end
     end
+
+    def local_url(current_shop_code)
+      url % { shop_code: current_shop_code }
+    end
   end
 end
 

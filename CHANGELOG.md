@@ -233,3 +233,7 @@
 ## v0.23.0
 
 * Added method to user management module
+
+## v0.24.0
+
+* Removed extended models, added local url to external app
