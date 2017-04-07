@@ -186,7 +186,7 @@
 
 * Removed no longer used has_attendance_control attribute.
 
-## v0.15
+## v0.15.0
 
 * Fixed escaping on user methods.
 
@@ -218,7 +218,7 @@
 
 * Refactor on attributes for user and user extended.
 
-## v0.21
+## v0.21.0
 
 * Refactor on attributes for users and roles.
 
@@ -226,6 +226,10 @@
 
 * Removed no longer used attribute from users.
 
-## v0.22
+## v0.22.0
 
 * Added local app shops to user
+
+## v0.23.0
+
+* Added method to user management module
