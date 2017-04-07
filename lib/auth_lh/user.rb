@@ -4,7 +4,7 @@ module AuthLh
     :shop_code, :shop_id, :shop_name, :enabled, :password_expired,
     :has_remote_desktop, :attendance_mode, :fingerprint_from,
     :fingerprint_to, :attendance_mode, :external_apps, :roles,
-    :local_app_shop_codes
+    :local_app_shop_codes, :extension_number
 
     def initialize(attributes={})
       attributes.each do |k,v|

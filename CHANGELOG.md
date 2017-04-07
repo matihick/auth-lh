@@ -249,3 +249,7 @@
 ## v0.27.0
 
 * Bugfix on dependencies
+
+## v0.28.0
+
+* Add extension number to user
