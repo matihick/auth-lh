@@ -225,3 +225,7 @@
 ## v0.21.1
 
 * Removed no longer used attribute from users.
+
+## v0.22
+
+* Added local app shops to user
