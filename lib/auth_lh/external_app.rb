@@ -8,8 +8,8 @@ module AuthLh
       end
     end
 
-    def local_name(current_shop_code)
-      name % { shop_code: current_shop_code }
+    def local_description(current_shop_code)
+      description % { shop_code: current_shop_code }
     end
 
     def local_url(current_shop_code)

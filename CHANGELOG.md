@@ -241,3 +241,7 @@
 ## v0.25.0
 
 * Added local name to external app
+
+## v0.26.0
+
+* Changed local name to local description on external app
