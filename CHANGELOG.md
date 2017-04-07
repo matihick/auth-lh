@@ -237,3 +237,7 @@
 ## v0.24.0
 
 * Removed extended models, added local url to external app
+
+## v0.25.0
+
+* Added local name to external app
