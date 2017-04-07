@@ -73,9 +73,9 @@ module AuthLh
 
     def self.change_password_url(return_url=nil)
       if return_url.present?
-        "#{@endpoint}/change_password?return_url=#{CGI::escape(return_url)}"
+        "#{@endpoint}/current_user/password/edit?return_url=#{CGI::escape(return_url)}"
       else
-        "#{@endpoint}/change_password"
+        "#{@endpoint}/current_user/password/edit"
       end
     end
 

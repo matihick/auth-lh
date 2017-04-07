@@ -256,4 +256,8 @@
 
 ## v0.29.0
 
-* Bugfix allowed local apps
+* Bugfix allowed local app
+
+## v0.30.0
+
+* Fixed change password url
