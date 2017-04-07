@@ -253,3 +253,7 @@
 ## v0.28.0
 
 * Add extension number to user
+
+## v0.29.0
+
+* Bugfix allowed local apps

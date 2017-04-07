@@ -16,8 +16,8 @@ module AuthLh
       @auth_user = val
     end
 
-    def allowed_local_shop_codes(current_shop_code)
-      (@auth_user.local_app_shop_codes + current_shop_code).uniq
+    def allowed_local_shop_codes(current_shop_code=nil)
+      (@auth_user.local_app_shop_codes + [current_shop_code]).compact.uniq
     end
 
     module ClassMethods
