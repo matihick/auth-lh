@@ -1,4 +1,5 @@
 require 'auth_lh/api'
+require 'auth_lh/auth_management'
 require 'auth_lh/external_app'
 require 'auth_lh/role'
 require 'auth_lh/role_management'

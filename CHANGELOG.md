@@ -261,3 +261,7 @@
 ## v0.30.0
 
 * Fixed change password url
+
+## v1.0
+
+* Refactor on auth, static methods moved to class, added module for authentication.

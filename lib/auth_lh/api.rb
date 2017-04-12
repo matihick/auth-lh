@@ -1,44 +1,44 @@
 module AuthLh
   class Api
-    def self.configure(args={})
+    def initialize(args={})
       @endpoint = (args[:endpoint] || 'https://usuarios.lhconfort.com.ar')
       @application_code = args[:application_code]
       @access_token = args[:access_token]
     end
 
-    def self.get_user(login)
+    def get_user(login)
       User.new(get_request("/api/users/#{CGI::escape(login)}"))
     end
 
-    def self.update_user(login, attrs={})
+    def update_user(login, attrs={})
       User.new(put_request("/api/users/#{CGI::escape(login)}", attrs))
     end
 
-    def self.get_users(filters={})
+    def get_users(filters={})
       results = get_request('/api/users', filters)
       results.map { |r| User.new(r) }
     end
 
-    def self.get_users_extended(filters={})
+    def get_users_extended(filters={})
       results = get_request('/api/users/extended', filters)
       results.map { |r| UserExtended.new(r) }
     end
 
-    def self.get_external_apps
+    def get_external_apps
       results = get_request('/api/external_apps')
       results.map { |r| ExternalAppExtended.new(r) }
     end
 
-    def self.get_roles
+    def get_roles
       results = get_request('/api/roles')
       results.map { |r| Role.new(r) }
     end
 
-    def self.get_role(role_id)
+    def get_role(role_id)
       Role.new(get_request("/api/roles/#{role_id}"))
     end
 
-    def self.get_current_user(session_token, remote_ip, return_url=nil)
+    def get_current_user(session_token, remote_ip, return_url=nil)
       result = get_request '/api/current_user', {
         app_code: @application_code,
         session_token: session_token,
@@ -49,13 +49,13 @@ module AuthLh
       SessionResponse.new(result)
     end
 
-    def self.get_current_shop(ip_address=nil)
+    def get_current_shop(ip_address=nil)
       attrs = { ip: ip_address }
       response = get_request('/api/current_shop', attrs)
       response.nil? ? nil : Shop.new(response)
     end
 
-    def self.login_url(return_url=nil)
+    def login_url(return_url=nil)
       if return_url.present?
         "#{@endpoint}/login?return_url=#{CGI::escape(return_url)}"
       else
@@ -63,7 +63,7 @@ module AuthLh
       end
     end
 
-    def self.logout_url(return_url=nil)
+    def logout_url(return_url=nil)
       if return_url.present?
         "#{@endpoint}/logout?return_url=#{CGI::escape(return_url)}"
       else
@@ -71,7 +71,7 @@ module AuthLh
       end
     end
 
-    def self.change_password_url(return_url=nil)
+    def change_password_url(return_url=nil)
       if return_url.present?
         "#{@endpoint}/current_user/password/edit?return_url=#{CGI::escape(return_url)}"
       else
@@ -79,13 +79,9 @@ module AuthLh
       end
     end
 
-    def self.my_apps_url
-      "#{@endpoint}"
-    end
-
     protected
 
-    def self.get_request(action, params={})
+    def get_request(action, params={})
       response = RestClient.get("#{@endpoint}#{action}", {params: params}.merge(auth_headers))
 
       if response.body == 'null'
@@ -95,7 +91,7 @@ module AuthLh
       end
     end
 
-    def self.put_request(action, params={})
+    def put_request(action, params={})
       response = RestClient.put("#{@endpoint}#{action}", params, auth_headers)
 
       if response.body == 'null'
@@ -105,7 +101,7 @@ module AuthLh
       end
     end
 
-    def self.auth_headers
+    def auth_headers
       { authorization: "Token token=\"#{@access_token}\"" }
     end
   end
