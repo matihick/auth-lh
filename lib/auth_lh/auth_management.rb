@@ -25,6 +25,16 @@ module AuthLh
       @current_shop
     end
 
+    def check_local_access
+      if current_user
+        allowed_shop_codes = current_user.allowed_local_shop_codes(current_shop.try(:code))
+
+        if !allowed_shop_codes.include?(local_shop.code)
+          render file: 'public/403.html', layout: false
+        end
+      end
+    end
+
     def check_access_grants
       if current_user
         if !current_user.can_access?(params[:controller], params[:action])

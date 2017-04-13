@@ -265,3 +265,7 @@
 ## v1.0
 
 * Refactor on auth, static methods moved to class, added module for authentication.
+
+## v1.1
+
+* Added method to check local access.
