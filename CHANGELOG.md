@@ -277,3 +277,7 @@
 ## v1.2.1
 
 * Added method to get local shop
+
+## v1.3
+
+* Fix on roles management

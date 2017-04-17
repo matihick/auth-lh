@@ -18,7 +18,7 @@ module AuthLh
 
     module ClassMethods
       def all_external
-        @cached_roles ||= AuthLh::Api.get_roles
+        @cached_roles ||= auth_api.get_roles
       end
 
       def find_external(id)
