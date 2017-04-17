@@ -269,3 +269,7 @@
 ## v1.1
 
 * Added method to check local access.
+
+## v1.2
+
+* Fix on method to get current shop for local requests

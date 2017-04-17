@@ -18,7 +18,11 @@ module AuthLh
     end
 
     def set_current_shop
-      @current_shop = @auth_api.get_current_shop(request.remote_ip)
+      if request.local?
+        @current_shop = @local_shop
+      else
+        @current_shop = @auth_api.get_current_shop(request.remote_ip)
+      end
     end
 
     def current_shop
