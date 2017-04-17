@@ -273,3 +273,7 @@
 ## v1.2
 
 * Fix on method to get current shop for local requests
+
+## v1.2.1
+
+* Added method to get local shop

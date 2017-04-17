@@ -29,6 +29,10 @@ module AuthLh
       @current_shop
     end
 
+    def local_shop
+      @local_shop
+    end
+
     def check_local_access
       if current_user
         allowed_shop_codes = current_user.allowed_local_shop_codes(current_shop.try(:code))
